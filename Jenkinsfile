@@ -36,6 +36,8 @@ pipeline {
                                     tenantIdVariable: 'ARM_TENANT_ID')]) {
                     sh 'export ARM_ACCESS_KEY=$ARM_ACCESS_CREDS_PSW'  
                     sh 'export TF_VAR_gcp_creds=$GCP_CREDS_FILE'
+                    sh 'echo "11111"'
+                    sh 'echo "$GCP_CREDS_FILE"'
                     sh 'chmod +x ./$RS_PATH/terraformmw'
                     sh './$RS_PATH/terraformmw'
                 }
