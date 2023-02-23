@@ -23,7 +23,7 @@ pipeline {
         stage('terraform') {
             environment { //拉取微软的远端存储密钥
                 ARM_ACCESS_CREDS = credentials('azurestoragekey') 
-                GCP_CREDS_FILE = credentials('my-kubeconfig')
+                GCP_CREDS_FILE = credentials('gcpTest')
                 TF_SPACE = "$params.TEST_TF_SPACE"
                 RS_PATH = "$params.TEST_RS_PATH"
             }
