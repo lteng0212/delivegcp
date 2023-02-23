@@ -23,7 +23,7 @@ pipeline {
         stage('terraform') {
             environment { //拉取微软的远端存储密钥
                 ARM_ACCESS_CREDS = credentials('azurestoragekey') 
-                GCP_CREDS_FILE = credentials('gcpTest')
+                TF_VAR_gcp_creds = credentials('gcpTest')
                 TF_SPACE = "$params.TEST_TF_SPACE"
                 RS_PATH = "$params.TEST_RS_PATH"
             }
@@ -35,7 +35,6 @@ pipeline {
                                     clientSecretVariable: 'ARM_CLIENT_SECRET',
                                     tenantIdVariable: 'ARM_TENANT_ID')]) {
                     sh 'export ARM_ACCESS_KEY=$ARM_ACCESS_CREDS_PSW'  
-                    sh 'export TF_VAR_gcp_creds=$GCP_CREDS_FILE'
                     sh 'echo "11111"'
                     sh 'echo "$TF_VAR_gcp_creds"'
                     sh 'chmod +x ./$RS_PATH/terraformmw'
