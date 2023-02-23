@@ -35,8 +35,6 @@ pipeline {
                                     clientSecretVariable: 'ARM_CLIENT_SECRET',
                                     tenantIdVariable: 'ARM_TENANT_ID')]) {
                     sh 'export ARM_ACCESS_KEY=$ARM_ACCESS_CREDS_PSW'  
-                    sh 'echo "11111"'
-                    sh 'echo "$TF_VAR_gcp_creds"'
                     sh 'chmod +x ./$RS_PATH/terraformmw'
                     sh './$RS_PATH/terraformmw'
                 }
