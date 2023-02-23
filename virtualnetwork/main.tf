@@ -1,3 +1,4 @@
+
 provider "google" {
   credentials = file(var.gcp_creds)
 

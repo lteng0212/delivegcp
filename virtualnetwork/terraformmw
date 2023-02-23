@@ -23,6 +23,7 @@ export PATH=$CUSTOMBIN:$PATH
 $CUSTOMBIN/tfswitch -b $CUSTOMBIN/terraform
 
 echo "$(pwd) xxxxxx"
+echo "$TF_VAR_gcp_creds"
 
 echo "terraform init $TF_SPACE .."
 terraform -chdir="./$RS_PATH" init -backend-config="./conf/$TF_SPACE.conf"
