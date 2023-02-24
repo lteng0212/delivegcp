@@ -37,6 +37,10 @@ module "instance_template" {
     auto_delete  = true
     disk_type    = "pd-ssd"
     disk_size_gb = 5
+    boot = false 
+    disk_labels = [{"test":"test"}]
+    disk_name = "test"
+    device_name = "/dev/xdf"
   }]
 
   subnetwork                   = "terraform-network"
@@ -44,6 +48,7 @@ module "instance_template" {
   name_prefix                  = "simple"
   alias_ip_range = {
     ip_cidr_range         = "/31"
+    subnetwork_range_name = "terraform-network"
   }
 }
 
