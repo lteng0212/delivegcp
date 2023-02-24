@@ -38,7 +38,7 @@ module "instance_template" {
     disk_type    = "pd-ssd"
     disk_size_gb = 5
     boot = false 
-    disk_labels = [{"test":"test"}]
+    disk_labels = {"test":"test"}
     disk_name = "test"
     device_name = "/dev/xdf"
   }]
