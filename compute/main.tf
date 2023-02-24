@@ -40,7 +40,7 @@ module "instance_template" {
     boot = false 
     disk_labels = {"test":"test"}
     disk_name = "test"
-    device_name = "/dev/xdf"
+    device_name = "sdb"
   }]
 
   subnetwork                   = "terraform-network"
