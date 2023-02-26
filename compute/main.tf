@@ -13,11 +13,11 @@ module "vm_compute_instance" {
   num_instances     = 2
   zone              = "us-central1-c"
   instance_template = module.instance_template.self_link
-  network        = "terraform-network"
-  //subnetwork     = "terraform-network"
+  network        = "default"
+  subnetwork     = "default"
   alias_ip_ranges = [{
     ip_cidr_range         = "/31"
-    //subnetwork_range_name = "terraform-network"
+    subnetwork_range_name = "default"
   }]
 }
 
@@ -39,7 +39,7 @@ module "instance_template" {
   auto_delete                  = true
   source_image_family          = "centos-7"
   source_image_project         = "centos-cloud"
-  network                      = "terraform-network"
+  network                      = "default"
   additional_disks = [{
     auto_delete  = true
     disk_type    = "pd-ssd"
