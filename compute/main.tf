@@ -13,6 +13,11 @@ module "vm_compute_instance" {
   num_instances     = 2
   zone              = "us-central1-c"
   instance_template = module.instance_template.self_link
+  subnetwork        = "terraform-network"
+  alias_ip_ranges = [{
+    ip_cidr_range         = "/31"
+    //subnetwork_range_name = "terraform-network"
+  }]
 }
 
 
@@ -42,13 +47,7 @@ module "instance_template" {
     disk_name = "test"
     device_name = "sdb"
   }]
-
-  subnetwork                   = "terraform-network"
   stack_type                   = "IPV4_ONLY"
   name_prefix                  = "simple"
-  alias_ip_range = {
-    ip_cidr_range         = "/31"
-    subnetwork_range_name = "terraform-network"
-  }
 }
 
