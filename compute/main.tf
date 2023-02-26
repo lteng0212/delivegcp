@@ -15,10 +15,10 @@ module "vm_compute_instance" {
   instance_template = module.instance_template.self_link
   network        = "default"
   subnetwork     = "default"
-  alias_ip_ranges = [{
+  /*alias_ip_ranges = [{
     ip_cidr_range         = "/31"
     subnetwork_range_name = "default"
-  }]
+  }]*/
 }
 
 
