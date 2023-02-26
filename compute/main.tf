@@ -16,7 +16,7 @@ module "vm_compute_instance" {
   network        = "terraform-network"
   alias_ip_ranges = [{
     ip_cidr_range         = "/31"
-    //subnetwork_range_name = "terraform-network"
+    subnetwork_range_name = "terraform-network"
   }]
 }
 
