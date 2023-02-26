@@ -46,7 +46,7 @@ module "instance_template" {
     disk_size_gb = 5
     boot = false 
     disk_labels = {"test":"test"}
-    disk_name = "test"
+    disk_name = null
     device_name = "sdb"
   }]
   stack_type                   = "IPV4_ONLY"
