@@ -14,6 +14,7 @@ module "vm_compute_instance" {
   zone              = "us-central1-c"
   instance_template = module.instance_template.self_link
   network        = "terraform-network"
+  subnetwork     = "terraform-network"
   alias_ip_ranges = [{
     ip_cidr_range         = "/31"
     subnetwork_range_name = "terraform-network"
